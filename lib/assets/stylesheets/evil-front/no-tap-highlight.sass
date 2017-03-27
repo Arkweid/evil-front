@@ -1,0 +1,11 @@
+@import "evil-front/colors"
+
+// Hide link tap highlight on mobile browsers. Use it only if you define your
+// own pressed styles.
+//
+//   .button
+//     +no-tap-highlight
+//
+// If you disable all taps highlight, use `styled-taps` mixin.
+@mixin no-tap-highlight
+  -webkit-tap-highlight-color: white(0)

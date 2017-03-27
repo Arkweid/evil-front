@@ -1,0 +1,42 @@
+// Define special class and fonts for Russian currency symbol.
+//
+// You must set you body fonts for `$defaults` argument. Also you can inline
+// in `data:uri` fonts styles, which you will use.
+//
+//   +import-ruble("PT Sans, sans-serif", $regular: inline)
+@mixin import-ruble($defaults: sans-serif, $regular: false, $italic: false, $bold: false, $bolditalic: false)
+  @font-face
+    font-family: 'ALSRubl-Arial'
+    @if $regular
+      src: inline("evil-front/alsrubl-arial-regular.woff") format("woff")
+    @else
+      src: font-url("evil-front/alsrubl-arial-regular.woff") format("woff")
+
+  @font-face
+    font-family: 'ALSRubl-Arial'
+    font-style: italic
+    @if $italic
+      src: inline("evil-front/alsrubl-arial-italic.woff") format("woff")
+    @else
+      src: font-url("evil-front/alsrubl-arial-italic.woff") format("woff")
+
+  @font-face
+    font-family: 'ALSRubl-Arial'
+    font-weight: bold
+    @if $bold
+      src: inline("evil-front/alsrubl-arial-bold.woff") format("woff")
+    @else
+      src: font-url("evil-front/alsrubl-arial-bold.woff") format("woff")
+
+  @font-face
+    font-family: 'ALSRubl-Arial'
+    font-style: italic
+    font-weight: bold
+    @if $bolditalic
+      src: inline("evil-front/alsrubl-arial-bolditalic.woff") format("woff")
+    @else
+      src: font-url("evil-front/alsrubl-arial-bolditalic.woff") format("woff")
+
+  .ruble
+    font-family: ALSRubl-Arial, unquote($defaults)
+    line-height: 1
